@@ -13,7 +13,8 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "WHOIS Search Engine",
+  title: "NETDUMP",
+  description: "WHOIS Search Engine",
   icons: {icon: [{url: '/'}]}
 };
 
