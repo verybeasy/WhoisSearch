@@ -192,8 +192,8 @@ OrgAbuseRef:    https://rdap.arin.net/registry/entity/NETWO3525-ARIN
 #
 `;
 
-const Link = ({ href, children, key }) => (
-  <div key={key} className='flex flex-row text-[14px] pb-1'>
+const Link = ({href, children}) => (
+  <div className='flex flex-row text-[14px] pb-1'>
     <FaArrowRight className='pt-1 mt-[1px] min-w-3 w-3'/>
     <a href={href}>{children}</a>
   </div>
@@ -348,7 +348,7 @@ export default function Home() {
           className={results.length > 0 && foobar.length > 0 ? '' : 'hidden'}
         >
           {results.map((result, index) => (
-            <Card header={result[0]}>
+            <Card header={result[0]} key={index}>
               <Foo
                 cidrs={result[1]} 
                 whois={result[2]}
@@ -366,7 +366,7 @@ export default function Home() {
           <Card header='Recent Searches'>
             <ul className='bg-slate-900 w-full rounded-b-md px-2 pt-1'>
               {recent_searches.map((query, index) => (
-                <li className={index < recent_searches.length - 1 ? 'border-b border-slate-700' : ''}>
+                <li key={index} className={index < recent_searches.length - 1 ? 'border-b border-slate-700' : ''}>
                   <Link key={index}>{query}</Link>
                 </li>
               ))}

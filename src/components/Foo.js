@@ -18,6 +18,7 @@ export default function Foo({ cidrs, whois, query }) {
             if (i > -1)
               return (
                 <div 
+                  key={index}
                   // className={`${index % 2 == 0 ? "bg-slate-700" : "bg-slate-800"}`}
                 >
                   {line.slice(0, i)}
