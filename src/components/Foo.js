@@ -3,14 +3,14 @@ export default function Foo({ cidrs, whois, query }) {
 
   return (
     <ul className='bg-slate-900 w-full rounded-b-md px-2 pt-1'>
-      <li className='border-b border-slate-700'>
-        <h1 className='font-bold w-fit border-b border-slate-700 mb-1'>CIDRs</h1>
+      <li>
+        <h1 className='font-bold w-fit mb-1'>CIDRs</h1>
         <pre className='text-[12px] whitespace-pre-wrap'>
           {cidrs.join(', ')}
         </pre>
       </li>
       <li>
-        <h1 className='font-bold w-fit border-b border-slate-700 mb-1'>Matches</h1>
+        <h1 className='font-bold w-fit mb-1 mt-1'>Matches</h1>
         <pre key={query} className='max-full w-full text-[9.5px] whitespace-pre-wrap pb-2'>
           {lines.map((line, index) => {
             const i = line.toLowerCase().indexOf(query.toLowerCase());

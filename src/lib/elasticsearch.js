@@ -1,13 +1,9 @@
 import { Client } from '@elastic/elasticsearch';
 
 const client = new Client({
-  node: process.env.ELASTICSEARCH_URL || 'https://localhost:9200',
+  node: 'https://37f7588a024f45769aebd14909d8f88a.us-central1.gcp.cloud.es.io:443',
   auth: {
-    username: process.env.ELASTICSEARCH_USERNAME || 'elastic',
-    password: process.env.ELASTICSEARCH_PASSWORD || 'changeme',
-  },
-  ssl: {
-    rejectUnauthorized: false 
+    apiKey: 'UXBSdDNKTUJjTnE0czFFeXgzMEk6NWJBbTZlb05SMkcxbi1oNzZja3RKUQ=='
   }
 });
 

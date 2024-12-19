@@ -7,8 +7,16 @@ export default async function handler(req, res) {
   const { query } = req.body;
 
   try {
+    // search.index({
+    //   index: 'search',
+    //   id: '',
+    //   document: {
+
+    //   }
+    // });
+
     const result = await client.search({
-      index: 'whois_data',
+      index: 'whois',
       body: {
         query: {
           match_phrase_prefix: {

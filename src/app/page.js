@@ -258,10 +258,10 @@ function Pagination({ children, className }) {
   };
 
   return (
-    <div className={className}>
-      <p className='p-1 w-fit mt-5 text-[13px]'>
+    <div className={`${className} mt-10`}>
+      {/* <p className='p-1 w-fit mt-5 text-[13px]'>
         Showing 
-      </p>
+      </p> */}
       <ul>
         {currentItems.map((item, index) => (
           <li key={index}>{item}</li>
@@ -357,32 +357,39 @@ export default function Home() {
             </Card>
           ))}
         </Pagination>
-
-        <div 
-          className={`
-            mt-5
-            ${results.length === 0 ? '' : 'hidden'}`}
-          >
-          <Card header='Recent Searches'>
-            <ul className='bg-slate-900 w-full rounded-b-md px-2 pt-1'>
-              {recent_searches.map((query, index) => (
-                <li key={index} className={index < recent_searches.length - 1 ? 'border-b border-slate-700' : ''}>
-                  <Link key={index}>{query}</Link>
-                </li>
-              ))}
-            </ul>
-          </Card>
-
-          <Card header='About'>
-            <div className='p-2 bg-slate-900 text-[14px] rounded-b-md'>
-              <p>This website provides a comprehensive search interface for exploring WHOIS data related to IP addresses.</p>
-              <p>It is designed to help users identify the CIDR ranges associated with various Autonomous Systems (AS).</p>
-              <p>Using scraped WHOIS data, the tool allows for keyword-based searching to filter results by organizations, locations, or other terms.</p>
-            </div>
-          </Card>
-        </div>
-
       </div>
+
+      <div
+        style={{width: '80%', alignSelf: 'center', maxWidth: 750}}
+        className={`
+          mt-5
+          ${results.length === 0 ? '' : 'hidden'}`}
+        >
+        {/* <Card header='Recent Searches'>
+          <ul className='bg-slate-900 w-full rounded-b-md px-2 pt-1'>
+            {recent_searches.map((query, index) => (
+              <li key={index} className={index < recent_searches.length - 1 ? 'border-b border-slate-700' : ''}>
+                <Link key={index}>{query}</Link>
+              </li>
+            ))}
+          </ul>
+        </Card> */}
+
+        <Card header='About'>
+          <div className='p-2 bg-slate-900 text-[14px] rounded-b-md'>
+            <p>This website provides a searchable database of scraped IP WHOIS data with detailed information about IP addresses including:</p>
+            
+            <ul style={{marginLeft: 10, marginTop: 10, marginBottom: 10,}}>
+              <li>• CIDR Ranges</li>
+              <li>• Organizations</li>
+              <li>• Geographical Locations</li>
+              <li>• Autonomous System (AS) Numbers</li>
+              <li>• Email Addresses</li>
+            </ul>
+          </div>
+        </Card>
+      </div>
+
       <div className='flex-grow'/>
       <Footer/>
     </div>
